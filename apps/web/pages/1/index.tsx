@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Engine, Render, World, Bodies } from "matter-js";
-export default function One(props) {
+import InfoSlot, { infoProps } from "ui/info";
+export default function One() {
   const scene = useRef();
   const isPressed = useRef(false);
   const engine = useRef(Engine.create());
@@ -26,9 +27,7 @@ export default function One(props) {
       Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
       Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true }),
     ]);
-    World.add(engine.current.world, [
-      Bodies.rectangle(cw / 2, ch / 2, 50, 50, { isStatic: true, render: { fillStyle: "red" } }),
-    ]);
+    World.add(engine.current.world, [Bodies.rectangle(cw / 2, ch / 2, 50, 50, { isStatic: true, render: { fillStyle: "red" } })]);
     var current = engine.current;
     Engine.run(current);
     Render.run(render);
@@ -51,6 +50,11 @@ export default function One(props) {
   const handleUp = () => {
     isPressed.current = false;
   };
+  const props: infoProps = {
+    day: 1,
+    description: "Learning to use Matter - a la Antfu",
+    goal: "Learn to use Next.js",
+  };
 
   const handleAddCircle = (e) => {
     if (isPressed.current) {
@@ -71,7 +75,7 @@ export default function One(props) {
       <div onMouseDown={handleDown} onMouseUp={handleUp} onMouseMove={handleAddCircle}>
         <div ref={scene} style={{ width: "100%", height: "100%" }} />
       </div>
-      <h1>Day 1 - Matter JS</h1>
+      <InfoSlot {...props} />
     </div>
   );
 }
