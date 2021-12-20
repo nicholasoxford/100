@@ -5,7 +5,5 @@ module.exports = {
       rootDir: ["apps/*/", "packages/*/", "api/*/"],
     },
   },
-  "rules": {
-    "max-len": ["error", {"code": 120, "ignoreUrls": true}]
-  }
+ 
 };

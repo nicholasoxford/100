@@ -27,7 +27,12 @@ export default function One() {
       Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
       Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true }),
     ]);
-    World.add(engine.current.world, [Bodies.rectangle(cw / 2, ch / 2, 50, 50, { isStatic: true, render: { fillStyle: "red" } })]);
+    World.add(engine.current.world, [
+      Bodies.rectangle(cw / 2, ch / 2, 50, 50, {
+        isStatic: true,
+        render: { fillStyle: "red" },
+      }),
+    ]);
     var current = engine.current;
     Engine.run(current);
     Render.run(render);
@@ -72,7 +77,11 @@ export default function One() {
 
   return (
     <div>
-      <div onMouseDown={handleDown} onMouseUp={handleUp} onMouseMove={handleAddCircle}>
+      <div
+        onMouseDown={handleDown}
+        onMouseUp={handleUp}
+        onMouseMove={handleAddCircle}
+      >
         <div ref={scene} style={{ width: "100%", height: "100%" }} />
       </div>
       <InfoSlot {...props} />
