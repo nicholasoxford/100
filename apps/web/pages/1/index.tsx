@@ -1,15 +1,15 @@
-import { useEffect, useRef } from "react";
-import { Engine, Render, World, Bodies } from "matter-js";
-import InfoSlot, { infoProps } from "ui/info";
+import { useEffect, useRef } from "react"
+import { Engine, Render, World, Bodies } from "matter-js"
+import InfoSlot, { infoProps } from "ui/info"
 export default function One() {
-  const scene = useRef();
-  const isPressed = useRef(false);
-  const engine = useRef(Engine.create());
+  const scene = useRef()
+  const isPressed = useRef(false)
+  const engine = useRef(Engine.create())
 
   useEffect(() => {
-    const cw = 400;
-    const ch = 400;
-    console.log("hello", cw, ch);
+    const cw = 400
+    const ch = 400
+    console.log("hello", cw, ch)
     const render = Render.create({
       element: scene.current,
       engine: engine.current,
@@ -17,49 +17,49 @@ export default function One() {
         width: cw,
         height: ch,
         wireframes: false,
-        background: "transparent",
-      },
-    });
+        background: "transparent"
+      }
+    })
     // Create a simple box
     World.add(engine.current.world, [
       Bodies.rectangle(cw / 2, -10, cw, 20, { isStatic: true }),
       Bodies.rectangle(-10, ch / 2, 20, ch, { isStatic: true }),
       Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
-      Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true }),
-    ]);
+      Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true })
+    ])
     World.add(engine.current.world, [
       Bodies.rectangle(cw / 2, ch / 2, 50, 50, {
         isStatic: true,
-        render: { fillStyle: "red" },
-      }),
-    ]);
-    var current = engine.current;
-    Engine.run(current);
-    Render.run(render);
+        render: { fillStyle: "red" }
+      })
+    ])
+    var current = engine.current
+    Engine.run(current)
+    Render.run(render)
 
     return () => {
-      Render.stop(render);
-      World.clear(current.world, true);
-      Engine.clear(current);
-      render.canvas.remove();
-      render.canvas = null;
-      render.context = null;
-      render.textures = {};
-    };
-  }, []);
+      Render.stop(render)
+      World.clear(current.world, true)
+      Engine.clear(current)
+      render.canvas.remove()
+      render.canvas = null
+      render.context = null
+      render.textures = {}
+    }
+  }, [])
 
   const handleDown = () => {
-    isPressed.current = true;
-  };
+    isPressed.current = true
+  }
 
   const handleUp = () => {
-    isPressed.current = false;
-  };
+    isPressed.current = false
+  }
   const props: infoProps = {
     day: 1,
     description: "Learning to use Matter - a la Antfu",
-    goal: "Learn to use Next.js",
-  };
+    goal: "Get a Turbo monorepo set up and deploy to Vercel."
+  }
 
   const handleAddCircle = (e) => {
     if (isPressed.current) {
@@ -68,23 +68,19 @@ export default function One() {
         restitution: 0.2,
         friction: 0.1,
         render: {
-          fillStyle: "#a68241",
-        },
-      });
-      World.add(engine.current.world, [sand]);
+          fillStyle: "#a68241"
+        }
+      })
+      World.add(engine.current.world, [sand])
     }
-  };
+  }
 
   return (
     <div style={{ width: "400px" }}>
-      <div
-        onMouseDown={handleDown}
-        onMouseUp={handleUp}
-        onMouseMove={handleAddCircle}
-      >
+      <div onMouseDown={handleDown} onMouseUp={handleUp} onMouseMove={handleAddCircle}>
         <div ref={scene} style={{ width: "100%", height: "100%" }} />
       </div>
       <InfoSlot {...props} />
     </div>
-  );
+  )
 }
