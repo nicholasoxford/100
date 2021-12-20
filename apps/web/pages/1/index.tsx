@@ -76,7 +76,7 @@ export default function One() {
   };
 
   return (
-    <div>
+    <div style={{ width: "400px" }}>
       <div
         onMouseDown={handleDown}
         onMouseUp={handleUp}

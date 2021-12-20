@@ -1,15 +1,18 @@
 export default function InfoSlot(props: infoProps) {
   return (
     <div>
-      <h2>{props.day}</h2>
-      <h2>{props.description}</h2>
-      <h2>{props.goal}</h2>
+      <h2>Day: </h2>
+      <div> {props.day}</div>
+      <h2>Description:</h2>
+      <div>{props.description}</div>
+      <h2>Goals:</h2>
+      <div className="text-3xl font-bold underline">{props.goal}</div>
     </div>
-  );
+  )
 }
 
 export type infoProps = {
-  day: number;
-  description: string;
-  goal: string;
-};
+  day: number
+  description: string
+  goal: string
+}
