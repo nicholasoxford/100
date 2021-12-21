@@ -10,6 +10,9 @@ export default function Web() {
           <li>
             <Link href="/100days/2">Day Two</Link>
           </li>
+          <li>
+            <Link href="/100days/3">Day Three</Link>
+          </li>
         </li>
       </ul>
     </div>
