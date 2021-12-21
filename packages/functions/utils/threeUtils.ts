@@ -1,11 +1,11 @@
-import * as THREE from "three"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-import filterInPlace from "functions/utils/filterInPlace"
+import * as THREE from 'three'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import filterInPlace from 'functions/utils/filterInPlace'
 
 export function createScene(width = 500, height = 500) {
   const renderer = new THREE.WebGLRenderer()
   renderer.setSize(width, height)
-  console.log("window.innerWidth", window.innerWidth)
+  console.log('window.innerWidth', window.innerWidth)
   document.body.appendChild(renderer.domElement)
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
   camera.position.set(-50, 0, 10)
