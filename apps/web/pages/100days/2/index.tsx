@@ -1,4 +1,3 @@
-import createRender from "functions/matterjs/createRender"
 import * as THREE from "three"
 import { useRef, useEffect } from "react"
 import InfoSlot, { infoProps } from "ui/info"
@@ -7,7 +6,7 @@ export default function Two() {
   const mountRef = useRef(null)
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer()
-    renderer.setSize(600, 600)
+    renderer.setSize(500, 500)
     console.log("window.innerWidth", window.innerWidth)
     document.body.appendChild(renderer.domElement)
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
@@ -47,7 +46,7 @@ export default function Two() {
   }
 
   return (
-    <div style={{ width: "400px" }}>
+    <div style={{ width: "500px" }}>
       <InfoSlot {...props} />
       <div>
         <div ref={mountRef}></div>
