@@ -28,7 +28,7 @@ export default function Three() {
   }, [])
   const props: infoProps = {
     day: 3,
-    description: "Broke out a lot of the hardwork into functions.",
+    description: "Broke out a lot of the hardwork into functions. You can also move the camera around.",
     goal: "Continue to learn ThreeJS and vizualize tan, cos, and sin functions."
   }
   return (
