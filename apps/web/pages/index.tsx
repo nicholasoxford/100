@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Web() {
   return (
@@ -6,9 +6,12 @@ export default function Web() {
       <h1>100 Days</h1>
       <ul>
         <li>
-          <Link href="/1">Day One</Link>
+          <Link href="/100days/1">Day One</Link>
+          <li>
+            <Link href="/100days/2">Day Two</Link>
+          </li>
         </li>
       </ul>
     </div>
-  );
+  )
 }

@@ -1,41 +1,21 @@
 import { useEffect, useRef } from "react"
-import { Engine, Render, World, Bodies } from "matter-js"
+import { Engine, Render, World, Bodies, Runner } from "matter-js"
 import InfoSlot, { infoProps } from "ui/info"
+import createRender from "functions/matterjs/createRender"
 export default function One() {
   const scene = useRef()
   const isPressed = useRef(false)
   const engine = useRef(Engine.create())
 
   useEffect(() => {
-    const cw = 400
-    const ch = 400
-    console.log("hello", cw, ch)
-    const render = Render.create({
-      element: scene.current,
-      engine: engine.current,
-      options: {
-        width: cw,
-        height: ch,
-        wireframes: false,
-        background: "transparent"
-      }
-    })
-    // Create a simple box
-    World.add(engine.current.world, [
-      Bodies.rectangle(cw / 2, -10, cw, 20, { isStatic: true }),
-      Bodies.rectangle(-10, ch / 2, 20, ch, { isStatic: true }),
-      Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
-      Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true })
-    ])
+    var { cw, ch, render, current } = createRender(scene, engine)
+
     World.add(engine.current.world, [
       Bodies.rectangle(cw / 2, ch / 2, 50, 50, {
         isStatic: true,
         render: { fillStyle: "red" }
       })
     ])
-    var current = engine.current
-    Engine.run(current)
-    Render.run(render)
 
     return () => {
       Render.stop(render)
@@ -77,10 +57,10 @@ export default function One() {
 
   return (
     <div style={{ width: "400px" }}>
+      <InfoSlot {...props} />
       <div onMouseDown={handleDown} onMouseUp={handleUp} onMouseMove={handleAddCircle}>
         <div ref={scene} style={{ width: "100%", height: "100%" }} />
       </div>
-      <InfoSlot {...props} />
     </div>
   )
 }
