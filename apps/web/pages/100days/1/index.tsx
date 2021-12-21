@@ -57,10 +57,10 @@ export default function One() {
 
   return (
     <div style={{ width: "400px" }}>
-      <InfoSlot {...props} />
       <div onMouseDown={handleDown} onMouseUp={handleUp} onMouseMove={handleAddCircle}>
         <div ref={scene} style={{ width: "100%", height: "100%" }} />
       </div>
+      <InfoSlot {...props} />
     </div>
   )
 }
