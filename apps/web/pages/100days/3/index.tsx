@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 import { createScene, createPointsAndGeometry, addFilterPoints } from "functions/utils/threeUtils"
+import InfoSlot, { infoProps } from "ui/info"
 export default function Three() {
   const mountRef = useRef(null)
   useEffect(() => {
@@ -25,9 +26,15 @@ export default function Three() {
     }
     animate()
   }, [])
+  const props: infoProps = {
+    day: 3,
+    description: "Broke out a lot of the hardwork into functions.",
+    goal: "Continue to learn ThreeJS and vizualize tan, cos, and sin functions."
+  }
   return (
     <div style={{ width: "500px" }}>
       <div>
+        <InfoSlot {...props} />
         <div ref={mountRef}></div>
       </div>
     </div>
