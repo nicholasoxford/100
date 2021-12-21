@@ -2,5 +2,6 @@
 Monorepo style
 
 ## Stack (so far)
-Turbo 💕
-NextJS
+[TurboRepo](https://turborepo.org/) 💕
+
+NextJS / Vercel
