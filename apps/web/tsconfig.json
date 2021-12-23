@@ -4,7 +4,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "../../packages/functions/matterjs/createRender.tsx"
+    "../../packages/functions/matterjs/createRender.tsx",
+    "../../packages/functions/utils/threeUtils.tsx"
   ],
   "exclude": [
     "node_modules"

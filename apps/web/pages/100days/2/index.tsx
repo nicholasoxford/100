@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { useRef, useEffect } from 'react'
-import InfoSlot, { infoProps } from 'ui/info'
+import InfoSlot, { infoProps } from 'ui/components/info'
 
 export default function Two() {
   const mountRef = useRef(null)

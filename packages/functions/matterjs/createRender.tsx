@@ -1,4 +1,4 @@
-import { Render, World, Bodies, Runner, Engine } from "matter-js"
+import { Render, World, Bodies, Runner, Engine } from 'matter-js'
 
 export default function createRender(scene, engine) {
   const cw: number = 400
@@ -10,7 +10,7 @@ export default function createRender(scene, engine) {
       width: cw,
       height: ch,
       wireframes: false,
-      background: "transparent"
+      background: 'transparent'
     }
   })
   // Create a simple box
@@ -20,18 +20,19 @@ export default function createRender(scene, engine) {
     Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
     Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true })
   ])
+
   for (var x = 0.5; x < cw; x += 10) {
-    render.canvas.getContext("2d").moveTo(0, x)
-    render.canvas.getContext("2d").lineTo(cw, x)
-    render.canvas.getContext("2d").lineWidth = 5
-    render.canvas.getContext("2d").strokeStyle = "black"
-    render.canvas.getContext("2d").stroke()
+    render.canvas.getContext('2d').moveTo(0, x)
+    render.canvas.getContext('2d').lineTo(cw, x)
+    render.canvas.getContext('2d').lineWidth = 5
+    render.canvas.getContext('2d').strokeStyle = 'black'
+    render.canvas.getContext('2d').stroke()
   }
   for (var y = 0.5; y < ch; y += 10) {
-    render.canvas.getContext("2d").moveTo(0, y)
-    render.canvas.getContext("2d").lineTo(ch, y)
+    render.canvas.getContext('2d').moveTo(0, y)
+    render.canvas.getContext('2d').lineTo(ch, y)
   }
-  render.canvas.getContext("2d").strokeStyle = "black"
+  render.canvas.getContext('2d').strokeStyle = 'black'
   var current: Engine = engine.current
   var runner = Runner.create()
   Runner.run(runner, engine.current)

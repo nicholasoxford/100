@@ -1,9 +1,9 @@
-import Link from "next/link"
-
-export default function Web() {
+import Link from 'next/link'
+import Layout from 'ui/layouts/layout'
+import React from 'react'
+export default function Page() {
   return (
     <div>
-      <h1>100 Days</h1>
       <ul>
         <li>
           <Link href="/100days/1">Day One</Link>

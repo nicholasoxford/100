@@ -29,7 +29,11 @@ export function addFilterPoints(
   filterInPlace(points, (point: THREE.Vector3) => point.x < 250)
   geometry.setFromPoints(points)
 }
-export function createPointsAndGeometry(color: THREE.ColorRepresentation = 0x0000ff, scene: THREE.Scene, zOffset = 0) {
+export function createPointsAndGeometry(
+  color: THREE.ColorRepresentation = 0x0000ff,
+  scene: THREE.Scene,
+  zOffset = 0
+) {
   const points = []
   const material = new THREE.LineBasicMaterial({ color: color })
 

@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react"
-import { Engine, Render, World, Bodies, Runner } from "matter-js"
-import InfoSlot, { infoProps } from "ui/info"
-import createRender from "functions/matterjs/createRender"
+import { useEffect, useRef } from 'react'
+import { Engine, Render, World, Bodies, Runner } from 'matter-js'
+import InfoSlot, { infoProps } from 'ui/components/info'
+import createRender from 'functions/matterjs/createRender'
 export default function One() {
   const scene = useRef()
   const isPressed = useRef(false)
@@ -13,7 +13,7 @@ export default function One() {
     World.add(engine.current.world, [
       Bodies.rectangle(cw / 2, ch / 2, 50, 50, {
         isStatic: true,
-        render: { fillStyle: "red" }
+        render: { fillStyle: 'red' }
       })
     ])
 
@@ -37,18 +37,18 @@ export default function One() {
   }
   const props: infoProps = {
     day: 1,
-    description: "Learning to use Matter - a la Antfu",
-    goal: "Get a Turbo monorepo set up and deploy to Vercel."
+    description: 'Learning to use Matter - a la Antfu',
+    goal: 'Get a Turbo monorepo set up and deploy to Vercel.'
   }
 
-  const handleAddCircle = (e) => {
+  const handleAddCircle = e => {
     if (isPressed.current) {
       const sand = Bodies.circle(e.clientX, e.clientY, 3, {
         mass: 10,
         restitution: 0.2,
         friction: 0.1,
         render: {
-          fillStyle: "#a68241"
+          fillStyle: '#a68241'
         }
       })
       World.add(engine.current.world, [sand])
@@ -56,9 +56,9 @@ export default function One() {
   }
 
   return (
-    <div style={{ width: "400px" }}>
+    <div style={{ width: '400px' }}>
       <div onMouseDown={handleDown} onMouseUp={handleUp} onMouseMove={handleAddCircle}>
-        <div ref={scene} style={{ width: "100%", height: "100%" }} />
+        <div ref={scene} style={{ width: '100%', height: '100%' }} />
       </div>
       <InfoSlot {...props} />
     </div>
