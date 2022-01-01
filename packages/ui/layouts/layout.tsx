@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from 'UI/components/Header'
+import Header from 'ui/components/Header'
 export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <div>
