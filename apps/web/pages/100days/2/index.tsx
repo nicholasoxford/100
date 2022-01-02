@@ -7,7 +7,6 @@ export default function Two() {
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer()
     renderer.setSize(500, 500)
-    console.log('window.innerWidth', window.innerWidth)
     document.body.appendChild(renderer.domElement)
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
     camera.position.set(0, 0, 100)

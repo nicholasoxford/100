@@ -1,8 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { createScene, createPointsAndGeometry, addFilterPoints } from 'functions/utils/threeUtils'
-import InfoSlot, { infoProps } from 'ui/components/info'
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import InfoSlot, { infoProps } from 'ui/components/info'
 
 import * as THREE from 'three'
 export default function Three() {
@@ -86,4 +84,9 @@ function createGas(scene: any) {
     scene.add(cloud)
   }
   return cloudParticles
+}
+export async function getStaticProps(context) {
+  return {
+    props: {} // will be passed to the page component as props
+  }
 }

@@ -1,6 +1,6 @@
 export default function InfoSlot(props: infoProps) {
   return (
-    <div>
+    <div style={{ maxWidth: '500px' }}>
       <h2>Day: </h2>
       <div> {props.day}</div>
       <h2>Description:</h2>
