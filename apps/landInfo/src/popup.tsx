@@ -86,7 +86,9 @@ const Popup = () => {
               }}
             >
               <div>AirQuality </div>
-              <div style={{}}>{airQuality.aqi}</div>
+              <div>
+                <b>{airQuality.aqi}</b>
+              </div>
             </div>
           )}
         </div>
