@@ -4,4 +4,8 @@ Monorepo style
 ## Stack (so far)
 [TurboRepo](https://turborepo.org/) 💕
 
-NextJS / Vercel
+Web - NextJS / Vercel
+
+Realm - MongoDB Realm
+
+LandInfo - Chrome Extension 
