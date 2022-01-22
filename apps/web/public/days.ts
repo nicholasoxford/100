@@ -28,5 +28,11 @@ export const days: infoProps[] = [
     description:
       'I created a chrome extension that parses certain websites for longitude and latitude coordinates. Land watch then sends the long, lat, and zipcode to my api which returns a list of closest trader joes, air quality, and plant hardiness.',
     goal: 'Create a chrome extension.'
+  },
+  {
+    day: 6,
+    description:
+      'Finally got a bug figured out with THREEJS canvases hanging around. Finally startingt to understand NextJS',
+    goal: 'Get the website working better'
   }
 ]
