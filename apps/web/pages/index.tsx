@@ -13,7 +13,7 @@ export default function Page() {
         {days.map(day => (
           <li key={day.day}>
             <Link href={`/100days/${day.day}`} passHref >
-             <a className='text-xl'> Day {day.day}</a>
+             <a style={{ textDecoration: 'underline', color: 'blue'}}> Day {day.day}</a>
             </Link>
           </li>
         ))}
