@@ -7,7 +7,7 @@ export default function Header() {
       <h1 >
       <Link href="/" passHref replace
       >
-        <a style={{ fontSize: 'none', color: 'black'}} >/</a>
+        <a style={{ fontSize: 'none', color: 'black', textDecoration: 'none'}} >/</a>
       </Link>
       </h1>
     </header>

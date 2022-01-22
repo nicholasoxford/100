@@ -7,8 +7,10 @@ export default function Page() {
 
   return (
     <div>
+      <div>
       <h1>Nicholas Oxford</h1>
       <h2>Personal Site</h2>
+      </div>
       <ul style={{ 
         listStyle: 'none',
       }}>
