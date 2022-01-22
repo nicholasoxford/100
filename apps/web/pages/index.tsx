@@ -1,7 +1,12 @@
 import Link from 'next/link'
-import Layout from 'ui/layouts/layout'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useRouter } from 'next/router'
+
 export default function Page() {
+
+
+    
+
   return (
     <div>
       <ul>
