@@ -1,7 +1,10 @@
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { days } from '../public/days'
 export default function Page() {
+  const router = useRouter();
+
   return (
     <div>
       <ul style={{ 

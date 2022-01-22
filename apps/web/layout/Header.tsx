@@ -5,9 +5,9 @@ export default function Header() {
   return (
     <header>
       <h1 >
-      <Link href="/" passHref
+      <Link href="/" passHref replace
       >
-        <a style={{ fontSize: 'none', color: 'black'}}>100 Days</a>
+        <a style={{ fontSize: 'none', color: 'black'}} >100 Days</a>
       </Link>
       </h1>
     </header>
