@@ -1,7 +1,35 @@
 import { useRouter } from 'next/dist/client/router'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Header from './Header'
 export default function Layout({ children }: LayoutProps): JSX.Element {
+  const useMediaQuery = width => {
+    const [targetReached, setTargetReached] = useState(false)
+
+    const updateTarget = useCallback(e => {
+      if (e.matches) {
+        setTargetReached(true)
+      } else {
+        setTargetReached(false)
+      }
+    }, [])
+
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`)
+
+      media.addEventListener('change', updateTarget)
+      console.log('nick', media)
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true)
+      }
+
+      return () => media.removeEventListener('change', updateTarget)
+    }, [updateTarget, width])
+
+    return targetReached
+  }
+  const isLessThanBreakPoint = useMediaQuery(768)
+
   const router = useRouter()
   useEffect(() => {
     const url = router.pathname
@@ -20,8 +48,10 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
   })
   return (
     <div>
-      <Header />
-      <main>{children}</main>
+      <Header isBreak={isLessThanBreakPoint} />
+      <main style={{ paddingLeft: isLessThanBreakPoint ? '40px' : '100px', fontFamily: 'IBM Plex Sans' }}>
+        {children}
+      </main>
     </div>
   )
 }
