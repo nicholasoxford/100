@@ -5,7 +5,7 @@ import filterInPlace from 'functions/utils/filterInPlace'
 export function createScene(width = 500, height = 500) {
   const renderer = new THREE.WebGLRenderer()
   renderer.setSize(width, height)
-  console.log('window.innerWidth', window.innerWidth)
+
   document.body.appendChild(renderer.domElement)
   const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
   camera.position.set(-50, 0, 10)
@@ -29,11 +29,7 @@ export function addFilterPoints(
   filterInPlace(points, (point: THREE.Vector3) => point.x < 250)
   geometry.setFromPoints(points)
 }
-export function createPointsAndGeometry(
-  color: THREE.ColorRepresentation = 0x0000ff,
-  scene: THREE.Scene,
-  zOffset = 0
-) {
+export function createPointsAndGeometry(color: THREE.ColorRepresentation = 0x0000ff, scene: THREE.Scene, zOffset = 0) {
   const points = []
   const material = new THREE.LineBasicMaterial({ color: color })
 

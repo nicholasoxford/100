@@ -17,7 +17,6 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       const media = window.matchMedia(`(max-width: ${width}px)`)
 
       media.addEventListener('change', updateTarget)
-      console.log('nick', media)
       // Check on mount (callback is not called until a change occurs)
       if (media.matches) {
         setTargetReached(true)
