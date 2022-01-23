@@ -7,7 +7,11 @@ export default function Page() {
   const router = useRouter()
 
   return (
-    <div>
+    <div
+      style={{
+        paddingTop: '25px'
+      }}
+    >
       <div
         style={{
           display: 'flex',
@@ -15,7 +19,6 @@ export default function Page() {
           justifyContent: 'space-between'
         }}
       >
-        <h1>Nicholas Oxford</h1>
         <h2>Personal Site</h2>
       </div>
       <ul

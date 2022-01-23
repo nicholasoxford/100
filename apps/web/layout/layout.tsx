@@ -17,13 +17,11 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
 
     useEffect(() => {
       const media = window.matchMedia(`(max-width: ${width}px)`)
-
       media.addEventListener('change', updateTarget)
       // Check on mount (callback is not called until a change occurs)
       if (media.matches) {
         setTargetReached(true)
       }
-
       return () => media.removeEventListener('change', updateTarget)
     }, [updateTarget, width])
 
@@ -48,10 +46,26 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       }
     }
   })
+
   return (
     <div>
+      <>
+        <style jsx global>{`
+          body {
+            margin: 0px;
+            padding: 0px;
+          }
+        `}</style>
+      </>
       <Header isBreak={isLessThanBreakPoint} />
-      <main style={{ paddingLeft: isLessThanBreakPoint ? '40px' : '100px', fontFamily: 'IBM Plex Sans' }}>
+      <main
+        style={{
+          paddingLeft: isLessThanBreakPoint ? '5vw' : '25vw',
+          fontFamily: 'IBM Plex Sans',
+          paddingTop: isLessThanBreakPoint ? '2vh' : null,
+          justifyContent: 'center'
+        }}
+      >
         {children}
       </main>
     </div>

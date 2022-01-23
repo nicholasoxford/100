@@ -21,4 +21,3 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     </Layout>
   )
 }
-
