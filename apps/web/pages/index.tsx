@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { days } from '../public/days'
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <div
       style={{
-        paddingTop: '25px'
+        paddingTop: '20px'
       }}
     >
       <div

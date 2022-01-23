@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Engine, Render, World, Bodies, Runner } from 'matter-js'
+import { Engine, Render, World, Bodies } from 'matter-js'
 import InfoSlot, { infoProps } from 'ui/components/info'
 import createRender from 'functions/matterjs/createRender'
 export default function One() {
