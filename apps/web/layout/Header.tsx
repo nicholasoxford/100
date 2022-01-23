@@ -8,7 +8,16 @@ export default function Header(props: { isBreak: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div>
-      <div className={isOpen ? styles.fadeIn : styles.fadeOut}>Hello World</div>
+      <div
+        className={isOpen ? styles.fadeIn : styles.fadeOut}
+        style={{
+          display: 'flex',
+          alignContent: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        Hello World
+      </div>
       {!isLessThanBreakPoint ? (
         <div
           style={{

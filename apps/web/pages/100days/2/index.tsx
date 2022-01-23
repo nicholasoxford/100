@@ -7,7 +7,9 @@ export default function Two() {
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer()
     renderer.setSize(500, 500)
-    document.body.appendChild(renderer.domElement)
+    console.log(document)
+    document.querySelector('#test').appendChild(renderer.domElement)
+    // document.body.appendChild(renderer.domElement)
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500)
     camera.position.set(0, 0, 100)
     camera.lookAt(0, 0, 0)
@@ -48,7 +50,7 @@ export default function Two() {
     <div style={{ width: '500px' }}>
       <InfoSlot {...props} />
       <div>
-        <div ref={mountRef}></div>
+        <div id="test" style={{ paddingTop: '2vh' }} ref={mountRef}></div>
       </div>
     </div>
   )
