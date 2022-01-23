@@ -2,6 +2,8 @@ import { useRouter } from 'next/dist/client/router'
 import React, { useCallback, useEffect, useState } from 'react'
 import Header from './Header'
 export default function Layout({ children }: LayoutProps): JSX.Element {
+  // figure out screen width and set state accordingly
+  // we pass this down to the header component
   const useMediaQuery = width => {
     const [targetReached, setTargetReached] = useState(false)
 
@@ -27,6 +29,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
 
     return targetReached
   }
+  // the width we care about
   const isLessThanBreakPoint = useMediaQuery(768)
 
   const router = useRouter()
