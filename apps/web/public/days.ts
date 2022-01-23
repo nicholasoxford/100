@@ -34,5 +34,11 @@ export const days: infoProps[] = [
     description:
       'Finally got a bug figured out with THREEJS canvases hanging around. Finally startingt to understand NextJS',
     goal: 'Get the website working better'
+  },
+  {
+    day: 7,
+    description:
+      'Created a chrome extension that parses certain websites for longitude and latitude coordinates, and returns info about the land',
+    goal: 'Create a chrome extension.'
   }
 ]
