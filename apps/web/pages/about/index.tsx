@@ -1,9 +1,4 @@
-import { useRouter } from 'next/dist/client/router'
-import React from 'react'
-
-export default function Page() {
-  const router = useRouter()
-
+export default function page() {
   return (
     <div
       style={{
@@ -17,7 +12,7 @@ export default function Page() {
           justifyContent: 'space-between'
         }}
       >
-        <h2>Personal Site</h2>
+        <h2>About Me</h2>
       </div>
     </div>
   )

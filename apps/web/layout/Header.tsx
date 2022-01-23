@@ -18,21 +18,7 @@ export default function Header(props: { isBreak: boolean }) {
             height: '100vh'
           }}
         >
-          <div
-            style={{
-              minWidth: '40px',
-              position: 'fixed',
-              zIndex: '1',
-              top: '0',
-              width: 'inherit',
-              marginLeft: '10px',
-              left: '0',
-              // overflowX: 'hidden',
-              paddingTop: '20px',
-              fontFamily: 'IBM Plex Sans',
-              textAlign: 'right'
-            }}
-          >
+          <div className={styles.leftMenu}>
             <h1
               style={{
                 fontSize: '2em'

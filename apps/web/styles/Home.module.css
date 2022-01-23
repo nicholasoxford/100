@@ -13,9 +13,26 @@
   height: 100%;
   z-index: 99;
   background-color: aliceblue;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 2s ease-in-out;
-  transition: width 2s;
+  transition: height 1.5s;
+}
+.leftMenu {
+  min-width: 40px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: inherit;
+  margin-left: 10px;
+  left: 0;
+  padding-top: 20px;
+  font-family: IBM Plex Sans;
+  text-align: right;
+}
+.topRightBurger {
+  height: 10vh;
+  min-width: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 5vw;
+  padding-top: 5px;
 }

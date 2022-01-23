@@ -9,8 +9,8 @@ export default function Three() {
 
   scene = new THREE.Scene()
   camera = new THREE.PerspectiveCamera(100, 3, 1, 1000)
-  renderer = new THREE.WebGLRenderer()
   useEffect(() => {
+    renderer = new THREE.WebGLRenderer()
     camera.position.z = 1
     camera.position.y = -10
     camera.rotation.x = 1.16
